@@ -1,0 +1,15 @@
+diff --git a/r8152.c b/r8152.c
+index 5d6df58..30e3dd5 100644
+--- a/r8152.c
++++ b/r8152.c
+@@ -31,6 +31,10 @@
+ #include <linux/acpi.h>
+ #include "compatibility.h"
+ 
++#if LINUX_VERSION_CODE >= KERNEL_VERSION(6,6,0)
++# include <net/gso.h>
++#endif
++
+ /* Version Information */
+ #define DRIVER_VERSION "v2.17.1 (2023/06/13)"
+ #define DRIVER_AUTHOR "Realtek nic sw <nic_swsd@realtek.com>"
