@@ -1,6 +1,6 @@
 #
 # Download realtek r8152 linux driver from official site:
-# [https://www.realtek.com/en/component/zoo/category/network-interface-controllers-10-100-1000m-gigabit-ethernet-usb-3-0-software]
+# [https://www.realtek.com/Download/List?cate_id=585]
 #
 
 include $(TOPDIR)/rules.mk
@@ -17,7 +17,6 @@ include $(INCLUDE_DIR)/package.mk
 define KernelPackage/usb-net-rtl8152-vendor
   TITLE:=Kernel module for USB-to-Ethernet Realtek convertors
   SUBMENU:=USB Support
-  VERSION:=$(LINUX_VERSION)+$(PKG_VERSION)-$(BOARD)-$(PKG_RELEASE)
   DEPENDS:=+kmod-usb-net
   FILES:= $(PKG_BUILD_DIR)/r8152.ko
   AUTOLOAD:=$(call AutoProbe,r8152)
